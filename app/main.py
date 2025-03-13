@@ -6,9 +6,13 @@ app = FastAPI()
 
 @app.on_event("startup")
 def start_scheduler():
-    run_date = datetime(2025, 3, 12, 13, 48, 2)
+    # Date YYYY/MM/DD hh/mm/ss
+    run_date = datetime(2025, 3, 12, 11, 5, 1)
+    print("Tii")
+    print(datetime.now())
     print_example.apply_async(eta=run_date)
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    print("uwu")
+    return {"Onichan": "uwu, yiyi"}
