@@ -8,6 +8,7 @@ app = Celery('my_tasks',
 @app.task
 def get_example():
     resultRequest = requests.get('https://w3schools.com/python/demopage.htm')
+    print("Si llego x1")
     return resultRequest.text
 
 @app.task
@@ -18,4 +19,5 @@ def print_example():
 @app.task
 def task_de_prueba():
     resultRequest = requests.get('https://w3schools.com/python/demopage.htm')
+    print("No llego x2")
     return resultRequest.text

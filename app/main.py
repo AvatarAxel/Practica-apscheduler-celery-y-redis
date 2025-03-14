@@ -9,7 +9,7 @@ app = FastAPI()
 @app.on_event("startup")
 def start_scheduler():
     cdmx_tz = pytz.timezone("America/Mexico_City")
-    run_date = datetime(2025, 3, 12, 14, 15, 0, tzinfo=cdmx_tz)
+    run_date = datetime(2025, 3, 13, 16, 4, 0, tzinfo=cdmx_tz)
     print("Mi hora que configuro:", run_date)
     print("La hora actual en mi zona horaria:", datetime.now(cdmx_tz))
     print("Tarea programada: ", print_example.apply_async(eta=run_date))
@@ -18,7 +18,7 @@ def start_scheduler():
 @app.get("/")
 def read_root():
     print("uwu")
-    return {"Onichan": "uwu"}
+    return {"Hola": "Mundo"}
 
 @app.get("/task-result/{task_id}")
 def get_task_result(task_id: str):
